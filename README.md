@@ -1,5 +1,7 @@
 # K4 — Level 3A, Ngày 12: Hạ Tầng Cloud & Deployment (240 phút)
 
+![CI](https://github.com/hugebenevolence/K4-L3A-DAY12-TranDaiNhan-2A202602642-CloudServicesAndDeployment/actions/workflows/ci.yml/badge.svg)
+
 Đưa một AI agent từ `localhost:8000` lên một địa chỉ công khai mà người khác
 gọi được, có bảo mật, có giới hạn chi phí, và không sập khi bạn deploy bản mới.
 
@@ -241,6 +243,12 @@ Tổng bonus của bài lab tối đa **10 điểm** và tổng cuối không v�
 Bonus này chỉ chấm sản phẩm CI/CD của bài lab, không phải điểm giơ tay, phát
 biểu hay pitching. Muốn chấm nhanh phần bắt buộc thôi: `python grade.py
 --no-bonus`.
+
+Workflow CI ở `.github/workflows/ci.yml` chạy test và build khi push hoặc mở
+pull request. Để bật deploy Railway sau khi hai job này thành công, thêm GitHub
+Actions secret `RAILWAY_TOKEN` (project token) và các repository variables
+`RAILWAY_PROJECT_ID`, `RAILWAY_SERVICE_ID`, `PUBLIC_URL`. Deploy chỉ chạy trên
+nhánh `main`; nếu chưa cấu hình các biến này, job deploy được bỏ qua.
 
 Điểm mỗi checkpoint tỷ lệ với số test pass — **làm được đến đâu có điểm đến đó**.
 
